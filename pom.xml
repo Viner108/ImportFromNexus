@@ -18,13 +18,45 @@
             <groupId>com.lib</groupId>
             <artifactId>DoubleLib</artifactId>
             <version>1.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>  <!-- declare the exclusion here -->
+                    <groupId>com.lib</groupId>
+                    <artifactId>LibraryForNexus</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.company</groupId>
+            <artifactId>ThirdLib</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>  <!-- declare the exclusion here -->
+                    <groupId>com.lib</groupId>
+                    <artifactId>LibraryForNexus</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.lib</groupId>
+            <artifactId>LibraryForNexus</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <repositories>
         <repository>
             <id>nexus-snapshots</id>
             <name>nexus</name>
+            <url>http://192.168.1.106:8081/repository/maven-snapshots/</url>
+        </repository>
+        <repository>
+            <id>nexus-snapshots1</id>
+            <name>nexus1</name>
             <url>http://192.168.1.106:8081/repository/maven-doublelib/</url>
+        </repository>
+        <repository>
+            <id>nexus-snapshots2</id>
+            <name>nexus2</name>
+            <url>http://192.168.1.106:8081/repository/third-lib</url>
         </repository>
     </repositories>
 </project>
